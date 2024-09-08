@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/sockets.js' %}"></script>
+    <title>Random Number</title>
+
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #number { font-size: 2em; }
+    </style>
+
+</head>
+<body>
+    <h1>Random Number</h1>
+    <div id="number">...</div>
+    <button onclick="logout()">Выйти</button>
+
+    
+</body>
+</html>
