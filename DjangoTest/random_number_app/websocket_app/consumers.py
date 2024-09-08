@@ -1,17 +1,17 @@
 import json
 from random import randint
-from time import sleep
-from channels.generic.websocket import WebsocketConsumer
+from asyncio import sleep
+from channels.generic.websocket import AsyncWebsocketConsumer
 
 
-class RandomNumberConsumer(WebsocketConsumer):
-    def connect(self):
-        self.accept()
+class RandomNumberConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        await self.accept()
         
         while True:
             num = randint(1, 10000)
-            self.send(json.dumps({"number": num}))
-            sleep(5)
+            await self.send(json.dumps({"number": num}))
+            await sleep(5)
 
         '''await self.channel_layer.group_add(
             'random_number_group',
