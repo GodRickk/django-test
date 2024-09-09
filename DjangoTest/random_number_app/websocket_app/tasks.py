@@ -31,4 +31,4 @@ def generate_random_number():
             'number': number,
         }
     )
-    return JSONEncoder({'number': number})
+    return {'number': number}
