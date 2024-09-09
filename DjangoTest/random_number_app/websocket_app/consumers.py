@@ -19,7 +19,7 @@ class RandomNumberConsumer(AsyncWebsocketConsumer):
             await sleep(5)'''
 
 
-    '''async def disconnect(self, close_code):
+    async def disconnect(self, close_code):
         await self.channel_layer.group_discard(
             'random_number_group',
             self.channel_name
@@ -30,4 +30,4 @@ class RandomNumberConsumer(AsyncWebsocketConsumer):
         number = event['number']
         await self.send(text_data=json.dumps({
             'number': number
-        }))'''
+        }))

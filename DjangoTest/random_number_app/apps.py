@@ -1,6 +1,6 @@
 import asyncio
 from django.apps import AppConfig
-# from .websocket_app.tasks import generate_random_numbers
+from .websocket_app.tasks import generate_random_number
 from asgiref.sync import async_to_sync
 
 
@@ -9,9 +9,5 @@ class RandomNumberAppConfig(AppConfig):
     name = 'random_number_app'
 
 
-#def ready(self):
-    #async_to_sync(self.start_generator)()
-
-
-#async def start_generator(self):
-    #asyncio.create_task(generate_random_numbers())
+async def ready(self):
+    asyncio.create_task(generate_random_number())
