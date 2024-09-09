@@ -9,9 +9,9 @@ class RandomNumberAppConfig(AppConfig):
     name = 'random_number_app'
 
 
-'''def ready(self):
-    async_to_sync(self.start_generator)()
+#def ready(self):
+    #async_to_sync(self.start_generator)()
 
 
-async def start_generator(self):
-    asyncio.create_task(generate_random_numbers())'''
+#async def start_generator(self):
+    #asyncio.create_task(generate_random_numbers())

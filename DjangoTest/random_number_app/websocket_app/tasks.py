@@ -1,6 +1,6 @@
 import asyncio
 import random
-# from channels.layers import get_channel_layer
+#from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 
 '''async def generate_random_numbers():
