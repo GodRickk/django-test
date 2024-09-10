@@ -13,11 +13,6 @@ class RandomNumberConsumer(AsyncWebsocketConsumer):
         
         await self.accept()
         
-        '''while True:
-            num = randint(1, 10000)
-            await self.send(json.dumps({"number": num}))
-            await sleep(5)'''
-
 
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(
