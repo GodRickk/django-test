@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'social_django',
-    'random_number_app',
+    'random_number_app.apps.RandomNumberAppConfig',
+    # 'random_number_app',
 ]
 
 
@@ -116,6 +117,10 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+
+SOCIAL_AUTH_GITHUB_KEY = 'Ov23lidkDiqyb235E66y'
+SOCIAL_AUTH_GITHUB_SECRET = '8d5084b09fb784643272ed455244d7c0d5759761'
 
 
 AUTH_PASSWORD_VALIDATORS = [
