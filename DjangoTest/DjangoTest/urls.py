@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from random_number_app import views
+from random_number_app.views import Home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    #path('', views.index, name='index'),
     # path('', include('random_number_app.urls', namespace='random_number_app')),
-    re_path('', include('social_django.urls', namespace='social'))
+    #re_path('', include('social_django.urls', namespace='social')),
+    path("accounts/", include("allauth.urls")),
+    path("", Home.as_view(), name="home"),
 ]

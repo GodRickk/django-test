@@ -7,8 +7,15 @@ from django.contrib.auth import logout
 from django.views.generic import FormView
 
 
+from django.views.generic import TemplateView
+
+
+class Home(TemplateView):
+    template_name = "home.html"
+
+
 async def index(request):
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     return render(request, 'index.html')
 
 

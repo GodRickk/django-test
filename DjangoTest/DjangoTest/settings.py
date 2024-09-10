@@ -40,15 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'daphne',
     'django.contrib.staticfiles',
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.github",
     'channels',
     'social_django',
     'random_number_app.apps.RandomNumberAppConfig',
     # 'random_number_app',
 ]
 
-# файл .env - secret key, все секретные файлы
-# python 
-# django-admin startproject *config* .
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 
@@ -117,12 +119,21 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-# efaefafwafafawfawdawfawfa
 
-AUTHENTICATION_BACKENDS = (
+
+'''AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+)'''
+
+AUTHENTICATION_BACKENDS = (
+"allauth.account.auth_backends.AuthenticationBackend",
 )
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = "none"
+LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_ON_GET = True
 
 
 SOCIAL_AUTH_GITHUB_KEY = 'Ov23lidkDiqyb235E66y'
