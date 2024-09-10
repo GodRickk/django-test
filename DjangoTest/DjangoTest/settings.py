@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 from datetime import timedelta
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# load_dotenv(f"/mnt/c/Users/redmi/Desktop/DjangoTest/django-test/DjangoTest\.env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,6 +46,9 @@ INSTALLED_APPS = [
     # 'random_number_app',
 ]
 
+# файл .env - secret key, все секретные файлы
+# python 
+# django-admin startproject *config* .
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -111,7 +117,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# efaefafwafafawfawdawfawfa
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',

@@ -6,28 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css'%}" type="text/css">
     <script src="{% static 'js/sockets.js' %}"></script>
-    <script src="{% static 'js/auth.js' %}"></script>
     <title>Random Number</title>
 
 </head>
 <body>
     <div class="container">
-        <div id="auth-container">
-            <form action="{% url "social:begin" "github" %}" target="_blank">
-                <button id="auth-button" class="button">Авторизоваться через GitHub</button>
-            </form>
-        </div>
-        <!-- <div id="number-container" style="display: none;">
-            <div class="number" id="random-number">0</div>
-            <button id="logout-button" class="button">Выйти</button>
-        </div> -->
-        
         <div id="number-container"></div>
             <div class="number" id="random-number">0</div>
             <button id="logout-button" class="button">Выйти</button>
         </div>
     </div>
 
-    
 </body>
 </html>

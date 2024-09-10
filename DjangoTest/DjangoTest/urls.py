@@ -21,5 +21,6 @@ from random_number_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    # path('', include('random_number_app.urls', namespace='random_number_app')),
     re_path('', include('social_django.urls', namespace='social'))
 ]
